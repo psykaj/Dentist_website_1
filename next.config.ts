@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  turbopack: {
+    root: process.cwd(), // Prevent Turbopack from scanning up to the home directory lockfile
+  }
 };
 
 export default nextConfig;
