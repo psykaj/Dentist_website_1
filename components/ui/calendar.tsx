@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { format, addMonths, subMonths, getDaysInMonth, startOfMonth, getDay, isSameDay, setMonth, setYear, addYears, subYears } from "date-fns";
+import { format, addMonths, subMonths, getDaysInMonth, startOfMonth, getDay, isSameDay, setMonth, setYear, addYears, subYears, isBefore, startOfDay } from "date-fns";
 import { Button } from "@/components/ui/button";
 
 interface CalendarProps {
@@ -134,16 +134,22 @@ export function Calendar({ value, onChange, onCancel, onOk }: CalendarProps) {
           {days.map((day) => {
             const date = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), day);
             const isSelected = selectedDate && isSameDay(date, selectedDate);
+            const isPast = isBefore(date, startOfDay(new Date()));
             
             return (
               <button
                 key={day}
                 type="button"
-                onClick={() => handleDateClick(day)}
+                onClick={() => {
+                  if (!isPast) handleDateClick(day);
+                }}
+                disabled={isPast}
                 className={`w-9 h-9 mx-auto flex items-center justify-center rounded-lg text-sm transition-all
                   ${isSelected 
                     ? "bg-blue-600 text-white font-bold shadow-md shadow-blue-500/30" 
-                    : "text-slate-700 hover:bg-slate-100 font-medium"
+                    : isPast 
+                      ? "text-slate-300 cursor-not-allowed"
+                      : "text-slate-700 hover:bg-slate-100 font-medium"
                   }
                 `}
               >

@@ -58,7 +58,7 @@ export const blogs = [
     `,
     author: "Dr. Rahul Verma",
     date: "June 02, 2023",
-    image: "https://images.unsplash.com/photo-1598256989800-fea5f61eb329?q=80&w=800&auto=format&fit=crop",
+    image: "/images/Root_canal_Debunked.jpg",
     tags: ["Root Canal", "Endodontics", "Dental Myths"]
   },
   {

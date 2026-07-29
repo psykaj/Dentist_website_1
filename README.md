@@ -1,3 +1,7 @@
+# Dentist Website 1
+
+**Updates**: Added new local images, updated appointment calendar to block past dates, and animated homepage stats.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## 🛠 Tech Stack

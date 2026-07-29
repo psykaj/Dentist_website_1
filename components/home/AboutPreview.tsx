@@ -1,17 +1,40 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView, animate } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/data/siteConfig";
 import { CheckCircle2 } from "lucide-react";
+import { useEffect, useRef } from "react";
+
+function AnimatedStat({ value, suffix, isDecimal = false }: { value: number, suffix: string, isDecimal?: boolean }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-50px" });
+
+  useEffect(() => {
+    if (inView && ref.current) {
+      const controls = animate(0, value, {
+        duration: 2,
+        ease: "easeOut",
+        onUpdate(v) {
+          if (ref.current) {
+            ref.current.textContent = (isDecimal ? v.toFixed(1) : Math.floor(v).toString()) + suffix;
+          }
+        }
+      });
+      return () => controls.stop();
+    }
+  }, [inView, value, suffix, isDecimal]);
+
+  return <span ref={ref}>0{suffix}</span>;
+}
 
 export function AboutPreview() {
   const stats = [
-    { label: "Years Experience", value: siteConfig.stats.experience },
-    { label: "Happy Patients", value: siteConfig.stats.patients },
-    { label: "Successful Treatments", value: siteConfig.stats.treatments },
-    { label: "Google Rating", value: `${siteConfig.stats.rating}★` },
+    { label: "Years Experience", value: 15, suffix: "+", isDecimal: false },
+    { label: "Happy Patients", value: 5000, suffix: "+", isDecimal: false },
+    { label: "Successful Treatments", value: 12000, suffix: "+", isDecimal: false },
+    { label: "Google Rating", value: 4.9, suffix: "★", isDecimal: true },
   ];
 
   return (
@@ -99,7 +122,9 @@ export function AboutPreview() {
         >
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <h4 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-2">{stat.value}</h4>
+              <h4 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-2">
+                <AnimatedStat value={stat.value} suffix={stat.suffix} isDecimal={stat.isDecimal} />
+              </h4>
               <p className="text-slate-600 font-medium uppercase tracking-wide text-sm">{stat.label}</p>
             </div>
           ))}

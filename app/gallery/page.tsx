@@ -10,16 +10,16 @@ export const metadata: Metadata = {
 export default function GalleryPage() {
   const images = [
     { id: 1, alt: "Clinic Interior", category: "Clinic Tour", url: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop" },
-    { id: 2, alt: "Dental Equipment", category: "Clinic Tour", url: "https://images.unsplash.com/photo-1598256989800-fea5f61eb329?q=80&w=800&auto=format&fit=crop" },
+    { id: 2, alt: "Dental Equipment", category: "Clinic Tour", url: "/images/Dental_Equipment.png" },
     { id: 3, alt: "Doctor and Patient", category: "Happy Patients", url: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop" },
     { id: 4, alt: "Whitening Results", category: "Before & After", url: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop" },
-    { id: 5, alt: "Child Patient", category: "Happy Patients", url: "https://images.unsplash.com/photo-1542868727-4a001a1db799?q=80&w=800&auto=format&fit=crop" },
+    { id: 5, alt: "Child Patient", category: "Happy Patients", url: "/images/Child_in_dentist_clinic.jpg" },
     { id: 6, alt: "Dental Checkup", category: "Clinic Tour", url: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop" },
-    { id: 7, alt: "Smiling Woman", category: "Happy Patients", url: "https://images.unsplash.com/photo-1563216839-e91e6b3b5220?q=80&w=800&auto=format&fit=crop" },
+    { id: 7, alt: "Smiling Woman", category: "Happy Patients", url: "/images/smiling_women.jpg" },
     { id: 8, alt: "Implants Result", category: "Before & After", url: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=800&auto=format&fit=crop" },
     { id: 9, alt: "Reception Area", category: "Clinic Tour", url: "https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=800&auto=format&fit=crop" },
     { id: 10, alt: "Male Patient", category: "Happy Patients", url: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format&fit=crop" },
-    { id: 11, alt: "Braces Off", category: "Before & After", url: "https://images.unsplash.com/photo-1594824432258-2c35a8bc3836?q=80&w=800&auto=format&fit=crop" },
+    { id: 11, alt: "Braces Off", category: "Before & After", url: "/images/Braces_off.jpg" },
     { id: 12, alt: "Clinic Room", category: "Clinic Tour", url: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=800&auto=format&fit=crop" },
   ];
 
