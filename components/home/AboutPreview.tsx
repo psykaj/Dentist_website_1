@@ -55,8 +55,8 @@ export function AboutPreview() {
                 <div className="rounded-3xl overflow-hidden h-64 bg-slate-200 border border-slate-200 shadow-lg">
                   <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop" alt="Clinic Interior" className="w-full h-full object-cover" />
                 </div>
-                <div className="rounded-3xl overflow-hidden h-48 bg-white border border-slate-200 shadow-lg p-2">
-                  <img src="/Images/Dental_Equipment.png" alt="Dental Equipment" className="w-full h-full object-contain" />
+                <div className="rounded-3xl overflow-hidden h-48 bg-slate-200 border border-slate-200 shadow-lg">
+                  <img src="/Images/Dental_Equipment.png" alt="Dental Equipment" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="space-y-4">

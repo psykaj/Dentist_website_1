@@ -13,7 +13,7 @@ const navLinks = [
   { name: "About", href: "/about" },
   { name: "Service", href: "/services" },
   { name: "Testimonial", href: "/testimonials" },
-  { name: "Contact", href: "/#contact" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export function Header() {
@@ -54,11 +54,10 @@ export function Header() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${
-                  pathname === link.href
-                    ? "text-primary"
-                    : headerTextClass
-                }`}
+                className={`px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${pathname === link.href
+                  ? "text-primary"
+                  : headerTextClass
+                  }`}
               >
                 {link.name}
               </Link>
@@ -98,9 +97,8 @@ export function Header() {
                     <Link
                       key={link.name}
                       href={link.href}
-                      className={`text-lg font-medium px-4 py-2 rounded-md transition-colors hover:bg-slate-100 ${
-                        pathname === link.href ? "text-primary bg-blue-50" : "text-slate-900"
-                      }`}
+                      className={`text-lg font-medium px-4 py-2 rounded-md transition-colors hover:bg-slate-100 ${pathname === link.href ? "text-primary bg-blue-50" : "text-slate-900"
+                        }`}
                     >
                       {link.name}
                     </Link>
