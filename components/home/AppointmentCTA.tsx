@@ -9,7 +9,7 @@ import { Phone, Calendar, Mail, MapPin } from "lucide-react";
 
 export function AppointmentCTA() {
   return (
-    <section className="py-20 bg-primary relative overflow-hidden" id="contact">
+    <section className="py-20 bg-primary relative overflow-hidden" id="appointment">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">

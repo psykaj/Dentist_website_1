@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { LocalBusinessSchema } from "@/components/SEO";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 
 import { ThemeProvider } from "@/components/ThemeProvider";
 
@@ -48,6 +49,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <ScrollToTop />
         </ThemeProvider>
       </body>
     </html>
